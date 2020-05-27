@@ -60,23 +60,15 @@ app.get('/weather', (req, res) => {
 
             res.send({
                 location,
-                forecast: forecastData,
-                address: req.query.address
+                forecast: forecastData[0],
+                address: req.query.address,
+                humidity: forecastData[1]
             })
-
-            //console.log(location)
-            //console.log(forecastData)
         })
     })
     
     
 })
-
-//1. Require geocode/forecast into app.js
-//2. Use the address to geocode
-//3. Use the coordinates to get forecast
-//4. Send back the real forecast and location
-
 
 app.get('/products', (req,res) => {
     if (!req.query.search) {
