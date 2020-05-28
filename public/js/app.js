@@ -8,6 +8,7 @@ weatherForm.addEventListener('submit', e => {
     e.preventDefault()
     messageOne.textContent = 'Loading....'
     messageTwo.textContent = ''
+    messageThree.textContent = ''
 
     const location = search.value
     fetch('/weather?address=' + location).then(response => {
